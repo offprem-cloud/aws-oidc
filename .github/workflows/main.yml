@@ -1,4 +1,4 @@
-name: Deploy to AWS
+name: OIDC to AWS
 on:
   push:
     branches: [main]
@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@6
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@5
         with:
           role-to-assume: arn:aws:iam::602195008766:role/GitHubActionsRole
           aws-region: us-east-1
